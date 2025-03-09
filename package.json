@@ -1,0 +1,49 @@
+{
+  "name": "mess-qr-system",
+  "version": "1.0.0",
+  "description": "QR Code based Mess System",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "sqlite3": "^5.1.7",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.9.0"
+  },
+  "build": {
+    "appId": "com.yourname.mess-qr-system",
+    "productName": "Mess QR System",
+    "files": [
+      "**/*",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/.{idea,git,cache,github,vscode}",
+      "!**/{.DS_Store,.git,.gitignore,.npmignore}"
+    ],
+    "directories": {
+      "buildResources": "resources",
+      "output": "dist"
+    },
+    "extraResources": [
+      "students.db"
+    ],
+    "win": {
+      "target": "portable"
+    }
+  }
+}
